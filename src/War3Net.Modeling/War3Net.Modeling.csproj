@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <Version>$(War3NetModelingVersion)</Version>
+    <UsePackageReferences>false</UsePackageReferences>
   </PropertyGroup>
   
   <PropertyGroup>
@@ -10,11 +11,11 @@
     <PackageTags>mdl;mdx;warcraft3</PackageTags>
   </PropertyGroup>
 
-  <ItemGroup Condition="'$(Configuration)'=='Debug'">
+  <ItemGroup Condition="'$(UsePackageReferences)' != 'true'">
     <ProjectReference Include="..\War3Net.Common\War3Net.Common.csproj" />
   </ItemGroup>
 
-  <ItemGroup Condition="'$(Configuration)'=='Release'">
+  <ItemGroup Condition="'$(UsePackageReferences)' == 'true'">
     <PackageReference Include="War3Net.Common" Version="$(War3NetCommonVersion)" />
   </ItemGroup>
 

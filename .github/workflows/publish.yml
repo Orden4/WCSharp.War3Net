@@ -1,0 +1,37 @@
+name: Publish NuGet Package
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    name: Build and publish to NuGet
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '5.x'
+
+      - name: Restore dependencies
+        working-directory: ./src
+        run: dotnet restore War3Net.Build
+
+      - name: Build project
+        working-directory: ./src
+        run: dotnet build War3Net.Build --configuration Release --no-restore --property WarningLevel=0
+
+      - name: Pack War3Net.Build
+        run: dotnet pack War3Net.Build --configuration Release --no-build -o out /p:UsePackageReferences=true
+
+      - name: Pack War3Net.Build.Core
+        run: dotnet pack War3Net.Build.Core --configuration Release --no-build -o out /p:UsePackageReferences=true
+
+      - name: Push to NuGet
+        run: dotnet run --project ./Tools.NuGetPusher/Tools.NuGetPusher.csproj -- --ApiKey ${{ secrets.NUGET_API_KEY }} --PackageDirectory out

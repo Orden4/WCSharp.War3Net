@@ -2,10 +2,15 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <UsePackageReferences>false</UsePackageReferences>
   </PropertyGroup>
 
-  <ItemGroup>
+  <ItemGroup Condition="'$(UsePackageReferences)' != 'true'">
     <ProjectReference Include="..\War3Net.IO.Compression\War3Net.IO.Compression.csproj" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(UsePackageReferences)' == 'true'">
+    <PackageReference Include="War3Net.IO.Compression" Version="$(War3NetIOCompressionVersion)" />
   </ItemGroup>
 
 </Project>

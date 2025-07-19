@@ -3,6 +3,8 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <Version>$(War3NetBuildVersion)</Version>
+	<PackageId>WCSharp.War3Net.Build</PackageId>
+    <UsePackageReferences>false</UsePackageReferences>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -10,12 +12,12 @@
     <PackageTags>warcraft3</PackageTags>
   </PropertyGroup>
 
-  <ItemGroup Condition="'$(Configuration)'=='Debug'">
+  <ItemGroup Condition="'$(UsePackageReferences)' != 'true'">
     <ProjectReference Include="..\War3Net.Build.Core\War3Net.Build.Core.csproj" />
     <ProjectReference Include="..\War3Net.CodeAnalysis.Transpilers\War3Net.CodeAnalysis.Transpilers.csproj" />
   </ItemGroup>
 
-  <ItemGroup Condition="'$(Configuration)'=='Release'">
+  <ItemGroup Condition="'$(UsePackageReferences)' == 'true'">
     <PackageReference Include="War3Net.Build.Core" Version="$(War3NetBuildCoreVersion)" />
     <PackageReference Include="War3Net.CodeAnalysis.Transpilers" Version="$(War3NetCodeAnalysisTranspilersVersion)" />
   </ItemGroup>
