@@ -12,8 +12,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
   <PropertyGroup>
-    <War3NetBuildVersion>5.7.2-rc1</War3NetBuildVersion>
-    <War3NetBuildCoreVersion>5.7.2-rc1</War3NetBuildCoreVersion>
+    <War3NetBuildVersion>5.7.2</War3NetBuildVersion>
+    <War3NetBuildCoreVersion>5.7.2</War3NetBuildCoreVersion>
     <War3NetCodeAnalysisVersion>5.6.1</War3NetCodeAnalysisVersion>
     <War3NetCodeAnalysisDecompilersVersion>5.7.1</War3NetCodeAnalysisDecompilersVersion>
     <War3NetCodeAnalysisJassVersion>5.6.1</War3NetCodeAnalysisJassVersion>
