@@ -27,7 +27,6 @@ jobs:
           dotnet-version: '6.x'
 
       - name: Restore dependencies
-        working-directory: ./src
         run: dotnet restore War3NetPublish.slnf
 
       - name: Build project
