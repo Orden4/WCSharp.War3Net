@@ -67,12 +67,12 @@ namespace NuGetPusher
 				try
 				{
 					await this.update.PushAsync(
-						new[] { package },
-						symbolSource: package.Replace(".nupkg", ".snupkg"),
+						new[] { package, package.Replace(".nupkg", ".snupkg") },
+						symbolSource: this.appSettings.NuGetSource,
 						timeoutInSecond: 300,
 						disableBuffering: false,
 						getApiKey: _ => this.appSettings.ApiKey,
-						getApiKey: _ => this.appSettings.ApiKey,
+						getSymbolApiKey: _ => this.appSettings.ApiKey,
 						noServiceEndpoint: false,
 						skipDuplicate: true,
 						allowSnupkg: true,
