@@ -4,11 +4,11 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup Condition="'$(Configuration)'=='Debug'">
+  <ItemGroup Condition="'$(UsePackageReferences)'!='true'">
     <ProjectReference Include="..\..\src\War3Net.CodeAnalysis.Transpilers\War3Net.CodeAnalysis.Transpilers.csproj" />
   </ItemGroup>
 
-  <ItemGroup Condition="'$(Configuration)'=='Release'">
+  <ItemGroup Condition="'$(UsePackageReferences)'=='true'">
     <PackageReference Include="War3Net.CodeAnalysis.Transpilers" Version="$(War3NetCodeAnalysisTranspilersVersion)" />
   </ItemGroup>
 

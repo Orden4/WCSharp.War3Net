@@ -2,6 +2,7 @@
   "solution": {
     "path": "War3Net.sln",
     "projects": [
+      "src\\Tools.NuGetPusher\\Tools.NuGetPusher.csproj",
       "src\\War3Net.Build.Core\\War3Net.Build.Core.csproj",
       "src\\War3Net.Build\\War3Net.Build.csproj",
       "src\\War3Net.CodeAnalysis.Decompilers\\War3Net.CodeAnalysis.Decompilers.csproj",
@@ -12,8 +13,8 @@
       "src\\War3Net.IO.Compression\\War3Net.IO.Compression.csproj",
       "src\\War3Net.IO.Mpq\\War3Net.IO.Mpq.csproj",
       "src\\War3Net.IO.Slk\\War3Net.IO.Slk.csproj",
-      "submodules\\CSharp.lua\\CSharp.lua.CoreSystem\\CSharp.lua.CoreSystem.csproj",
-      "submodules\\CSharp.lua\\CSharp.lua\\CSharp.lua.csproj",
+      "..\\CSharp.lua\\CSharp.lua.CoreSystem\\CSharp.lua.CoreSystem.csproj",
+      "..\\CSharp.lua\\CSharp.lua\\CSharp.lua.csproj",
       "submodules\\FastMDX\\FastMDX\\FastMDX.csproj",
       "tests\\War3Net.Build.Core.Tests\\War3Net.Build.Core.Tests.csproj",
       "tests\\War3Net.Build.Tests\\War3Net.Build.Tests.csproj",

@@ -4,11 +4,11 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup Condition="'$(Configuration)'=='Debug'">
+  <ItemGroup Condition="'$(UsePackageReferences)'!='true'">
     <ProjectReference Include="..\..\src\War3Net.CodeAnalysis.VJass\War3Net.CodeAnalysis.VJass.csproj" />
   </ItemGroup>
 
-  <ItemGroup Condition="'$(Configuration)'=='Release'">
+  <ItemGroup Condition="'$(UsePackageReferences)'=='true'">
     <PackageReference Include="War3Net.CodeAnalysis.VJass" Version="$(War3NetCodeAnalysisVJassVersion)" />
   </ItemGroup>
 

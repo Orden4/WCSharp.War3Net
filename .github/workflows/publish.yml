@@ -28,20 +28,13 @@ jobs:
 
       - name: Restore dependencies
         working-directory: ./src
-        run: dotnet restore War3Net.Build
+        run: dotnet restore War3NetPublish.slnf
 
       - name: Build project
-        working-directory: ./src
-        run: dotnet build War3Net.Build --configuration Release --no-restore --property WarningLevel=0
+        run: dotnet build War3NetPublish.slnf --configuration Release --no-restore --property WarningLevel=0
 
       - name: Pack War3Net.Build
-        working-directory: ./src
-        run: dotnet pack War3Net.Build --configuration Release --no-build -o out /p:UsePackageReferences=true
-
-      - name: Pack War3Net.Build.Core
-        working-directory: ./src
-        run: dotnet pack War3Net.Build.Core --configuration Release --no-build -o out /p:UsePackageReferences=true
+        run: dotnet pack War3NetPublish.slnf --configuration Release --no-build -o out /p:UsePackageReferences=true
 
       - name: Push to NuGet
-        working-directory: ./src
         run: dotnet run --project ./Tools.NuGetPusher/Tools.NuGetPusher.csproj -- --ApiKey ${{ secrets.NUGET_API_KEY }} --PackageDirectory out

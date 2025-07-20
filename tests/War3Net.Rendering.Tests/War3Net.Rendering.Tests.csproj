@@ -4,12 +4,11 @@
     <TargetFramework>net5.0-windows</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup Condition="'$(Configuration)'=='Debug'">
+  <ItemGroup Condition="'$(UsePackageReferences)'!='true'">
     <ProjectReference Include="..\..\src\War3Net.Rendering\War3Net.Rendering.csproj" />
   </ItemGroup>
 
-  <ItemGroup Condition="'$(Configuration)'=='Release'">
-    <!-- TODO: PackageReference instead of ProjectReference -->
+  <ItemGroup Condition="'$(UsePackageReferences)'=='true'">
     <ProjectReference Include="..\..\src\War3Net.Rendering\War3Net.Rendering.csproj" />
   </ItemGroup>
 

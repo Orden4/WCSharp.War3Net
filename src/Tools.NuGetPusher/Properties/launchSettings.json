@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Tools.NuGetPusher": {
+      "commandName": "Project",
+      "commandLineArgs": "--PackageDirectory out"
+    }
+  }
+}

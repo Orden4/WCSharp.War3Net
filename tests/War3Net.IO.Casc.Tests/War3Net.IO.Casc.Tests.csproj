@@ -4,16 +4,12 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
+  <ItemGroup Condition="'$(UsePackageReferences)'!='true'">
     <ProjectReference Include="..\..\src\War3Net.IO.Casc\War3Net.IO.Casc.csproj" />
   </ItemGroup>
 
-  <!--<ItemGroup Condition="'$(Configuration)'=='Debug'">
-    <ProjectReference Include="..\..\src\War3Net.IO.Casc\War3Net.IO.Casc.csproj" />
-  </ItemGroup>
-
-  <ItemGroup Condition="'$(Configuration)'=='Release'">
+  <ItemGroup Condition="'$(UsePackageReferences)'=='true'">
     <PackageReference Include="War3Net.IO.Casc" Version="$(War3NetIOCascVersion)" />
-  </ItemGroup>-->
+  </ItemGroup>
 
 </Project>

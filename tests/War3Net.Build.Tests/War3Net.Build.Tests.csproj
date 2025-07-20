@@ -4,14 +4,22 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup Condition="'$(Configuration)'=='Debug'">
-    <ProjectReference Include="..\..\src\War3Net.Build\War3Net.Build.csproj" />
-    <ProjectReference Include="..\..\submodules\CSharp.lua\CSharp.lua.CoreSystem\CSharp.lua.CoreSystem.csproj" />
+  <ItemGroup Condition="'$(Configuration)'=='CSharpLuaDev'">
+    <ProjectReference Include="..\..\..\CSharp.lua\CSharp.lua\CSharp.lua.csproj" />
+    <ProjectReference Include="..\..\..\CSharp.lua\CSharp.lua.CoreSystem\CSharp.lua.CoreSystem.csproj" />
   </ItemGroup>
 
-  <ItemGroup Condition="'$(Configuration)'=='Release'">
+  <ItemGroup Condition="'$(Configuration)'!='CSharpLuaDev'">
+    <PackageReference Include="WCSharp.CSharpLua" Version="$(War3NetCSharpLuaVersion)" />
+    <PackageReference Include="WCSharp.CSharpLua.CoreSystem" Version="$(War3NetCSharpLuaCoreSystemVersion)" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(UsePackageReferences)'!='true'">
+    <ProjectReference Include="..\..\src\War3Net.Build\War3Net.Build.csproj" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(UsePackageReferences)'=='true'">
     <PackageReference Include="War3Net.Build" Version="$(War3NetBuildVersion)" />
-    <PackageReference Include="War3Net.CSharpLua.CoreSystem" Version="$(War3NetCSharpLuaCoreSystemVersion)" />
   </ItemGroup>
 
 </Project>

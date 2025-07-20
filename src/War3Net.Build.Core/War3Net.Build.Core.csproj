@@ -5,7 +5,6 @@
     <Version>$(War3NetBuildCoreVersion)</Version>
     <RootNamespace>War3Net.Build</RootNamespace>
 	<PackageId>WCSharp.War3Net.Build.Core</PackageId>
-    <UsePackageReferences>false</UsePackageReferences>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -20,9 +19,9 @@
   </ItemGroup>
 
   <ItemGroup Condition="'$(UsePackageReferences)' == 'true'">
-    <PackageReference Include="War3Net.CodeAnalysis.Jass" Version="$(War3NetCodeAnalysisJassVersion)" />
-    <PackageReference Include="War3Net.IO.Mpq" Version="$(War3NetIOMpqVersion)" />
-    <PackageReference Include="War3Net.IO.Slk" Version="$(War3NetIOSlkVersion)" />
+    <PackageReference Include="WCSharp.War3Net.CodeAnalysis.Jass" Version="$(War3NetCodeAnalysisJassVersion)" />
+    <PackageReference Include="WCSharp.War3Net.IO.Mpq" Version="$(War3NetIOMpqVersion)" />
+    <PackageReference Include="WCSharp.War3Net.IO.Slk" Version="$(War3NetIOSlkVersion)" />
   </ItemGroup>
 
   <ItemGroup>

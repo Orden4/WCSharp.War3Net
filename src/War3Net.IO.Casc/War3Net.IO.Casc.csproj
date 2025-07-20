@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <UsePackageReferences>false</UsePackageReferences>
+    <PackageId>WCSharp.War3Net.IO.Casc</PackageId>
   </PropertyGroup>
 
   <ItemGroup Condition="'$(UsePackageReferences)' != 'true'">
@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup Condition="'$(UsePackageReferences)' == 'true'">
-    <PackageReference Include="War3Net.IO.Compression" Version="$(War3NetIOCompressionVersion)" />
+    <PackageReference Include="WCSharp.War3Net.IO.Compression" Version="$(War3NetIOCompressionVersion)" />
   </ItemGroup>
 
 </Project>

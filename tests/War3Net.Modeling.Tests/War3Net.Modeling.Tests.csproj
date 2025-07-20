@@ -4,12 +4,12 @@
     <TargetFramework>net5.0-windows</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup Condition="'$(Configuration)'=='Debug'">
+  <ItemGroup Condition="'$(UsePackageReferences)'!='true'">
     <ProjectReference Include="..\..\src\War3Net.Drawing.Blp\War3Net.Drawing.Blp.csproj" />
     <ProjectReference Include="..\..\src\War3Net.Modeling\War3Net.Modeling.csproj" />
   </ItemGroup>
 
-  <ItemGroup Condition="'$(Configuration)'=='Release'">
+  <ItemGroup Condition="'$(UsePackageReferences)'=='true'">
     <PackageReference Include="War3Net.Drawing.Blp" Version="$(War3NetDrawingBlpVersion)" />
     <PackageReference Include="War3Net.Modeling" Version="$(War3NetModelingVersion)" />
   </ItemGroup>

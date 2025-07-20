@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <Version>$(War3NetIOSlkVersion)</Version>
-    <UsePackageReferences>false</UsePackageReferences>
+    <PackageId>WCSharp.War3Net.IO.Slk</PackageId>
   </PropertyGroup>
   
   <PropertyGroup>
@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup Condition="'$(UsePackageReferences)' == 'true'">
-    <PackageReference Include="War3Net.Common" Version="$(War3NetCommonVersion)" />
+    <PackageReference Include="WCSharp.War3Net.Common" Version="$(War3NetCommonVersion)" />
   </ItemGroup>
 
 </Project>

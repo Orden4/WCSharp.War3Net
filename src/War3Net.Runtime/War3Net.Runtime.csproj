@@ -2,7 +2,6 @@
 
   <PropertyGroup>
     <TargetFrameworks>net5.0;net5.0-windows</TargetFrameworks>
-    <UsePackageReferences>false</UsePackageReferences>
   </PropertyGroup>
 
   <ItemGroup>

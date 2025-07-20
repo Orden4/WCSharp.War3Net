@@ -5,6 +5,7 @@
     <Version>$(War3NetBuildVersion)</Version>
 	<PackageId>WCSharp.War3Net.Build</PackageId>
     <UsePackageReferences>false</UsePackageReferences>
+    <Configurations>Debug;Release;CSharpLuaDev</Configurations>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -18,8 +19,8 @@
   </ItemGroup>
 
   <ItemGroup Condition="'$(UsePackageReferences)' == 'true'">
-    <PackageReference Include="War3Net.Build.Core" Version="$(War3NetBuildCoreVersion)" />
-    <PackageReference Include="War3Net.CodeAnalysis.Transpilers" Version="$(War3NetCodeAnalysisTranspilersVersion)" />
+    <PackageReference Include="WCSharp.War3Net.Build.Core" Version="$(War3NetBuildCoreVersion)" />
+    <PackageReference Include="WCSharp.War3Net.CodeAnalysis.Transpilers" Version="$(War3NetCodeAnalysisTranspilersVersion)" />
   </ItemGroup>
 
 </Project>

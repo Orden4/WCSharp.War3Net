@@ -68,14 +68,14 @@ namespace NuGetPusher
 				{
 					await this.update.PushAsync(
 						new[] { package },
-						symbolSource: null,
+						symbolSource: package.Replace(".nupkg", ".snupkg"),
 						timeoutInSecond: 300,
 						disableBuffering: false,
 						getApiKey: _ => this.appSettings.ApiKey,
-						getSymbolApiKey: _ => null,
+						getApiKey: _ => this.appSettings.ApiKey,
 						noServiceEndpoint: false,
 						skipDuplicate: true,
-						allowSnupkg: false,
+						allowSnupkg: true,
 						allowInsecureConnections: false,
 						log: NullLogger.Instance
 					);
