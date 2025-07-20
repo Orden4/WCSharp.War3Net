@@ -36,4 +36,4 @@ jobs:
         run: dotnet pack War3NetPublish.slnf --configuration Release --no-build -o out /p:UsePackageReferences=true
 
       - name: Push to NuGet
-        run: dotnet run --project ./Tools.NuGetPusher/Tools.NuGetPusher.csproj -- --ApiKey ${{ secrets.NUGET_API_KEY }} --PackageDirectory out
+        run: dotnet run --project ./src/Tools.NuGetPusher/Tools.NuGetPusher.csproj -- --ApiKey ${{ secrets.NUGET_API_KEY }} --PackageDirectory out
