@@ -1,8 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
-    <PackageId>WCSharp.War3Net.IO.Casc</PackageId>
+    <TargetFrameworks>$(TfmGroupDotNet)</TargetFrameworks>
   </PropertyGroup>
 
   <ItemGroup Condition="'$(UsePackageReferences)' != 'true'">
